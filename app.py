@@ -37,6 +37,21 @@ def prepare_review(review):
         return " ".join(corrected_review)
     
     review = correct_spelling(review)
+
+
+    common_words = [('the', 1941), ('and', 1129), ('a', 893), ('i', 887), ('is', 758), ('to', 667), ('it', 665), ('this', 639), ('of', 622),
+                ('was', 570), ('in', 398), ('for', 336), ('that', 303), ('with', 274), ('my', 251), ('on', 219), ('you', 203), ('but', 201),
+                ('have', 183), ('are', 180), ('as', 175), ('its', 151), ('be', 145), ('had', 138), ('at', 134), ('were', 107), ('there', 106),
+                ('an', 105), ('if', 103), ('from', 103), ('they', 100)]
+
+    remove_words = set([word for (word, count) in common_words])
+    
+    def remove_common_words(review):
+        return " ".join([word for word in str(review).split() if word not in remove_words])
+
+    review = remove_common_words(review)
+    
+    
     
     return [review]
 
@@ -46,7 +61,7 @@ def predict_review(model, review):
     
     # Create the sequences
     padding_type='post'
-    max_length = 50
+    max_length = 30
     sample_sequences = tokenizer.texts_to_sequences(review)
     review_padded = pad_sequences(sample_sequences, padding=padding_type, maxlen=max_length)           
              
