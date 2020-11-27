@@ -39,12 +39,25 @@ def prepare_review(review):
     review = correct_spelling(review)
 
 
-    common_words = [('the', 1941), ('and', 1129), ('a', 893), ('i', 887), ('is', 758), ('to', 667), ('it', 665), ('this', 639), ('of', 622),
-                ('was', 570), ('in', 398), ('for', 336), ('that', 303), ('with', 274), ('my', 251), ('on', 219), ('you', 203), ('but', 201),
-                ('have', 183), ('are', 180), ('as', 175), ('its', 151), ('be', 145), ('had', 138), ('at', 134), ('were', 107), ('there', 106),
-                ('an', 105), ('if', 103), ('from', 103), ('they', 100)]
+    common_words = ['the', 'and', 'a', 'i', 'is', 'to', 'it', 'this', 'of','was', 'in',
+                    'for', 'that', 'with', 'my', 'on', 'you', 'but', 'have', 'are', 'as',
+                    'its', 'be', 'had', 'at', 'were', 'there', 'an', 'if', 'from', 'they',
+                    'i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you',
+                    "you're", "you've", "you'll", "you'd", 'your', 'yours','yourself',
+                    'yourselves', 'he', 'him', 'his', 'himself', 'she', "she's", 'her',
+                    'hers', 'herself', 'it', "it's", 'its','itself', 'they', 'them',
+                    'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom',
+                    'this', 'that', "that'll", 'these','those', 'am', 'is', 'are', 'was',
+                    'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do',
+                    'does', 'did','doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or',
+                    'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with','about',
+                    'against', 'between', 'into', 'through', 'during', 'before', 'after',
+                    'to', 'from', 'again', 'further', 'then', 'once', 'here', 'there',
+                    'when', 'where', 'why', 'how', 'both', 'each','other', 'some', 'such',
+                    'own', 'same', 'so','than','s', 't', 'can', 'will', 'just', 'now',
+                    'd', 'll', 'm', 'o', 're', 've', 'y']
 
-    remove_words = set([word for (word, count) in common_words])
+    remove_words = set([word for word in common_words])
     
     def remove_common_words(review):
         return " ".join([word for word in str(review).split() if word not in remove_words])
