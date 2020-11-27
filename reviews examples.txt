@@ -1,0 +1,19 @@
+review1 = """I loved this place"""
+
+review2 = """that was the worst movie I've ever seen in my life"""
+
+review3 = """too much violence even for an adventure film"""
+
+review4 = """Great restaurant with amazing food"""
+
+review5 = """I saw this movie yesterday and I was feeling low to start with,
+ but it was such a wonderful movie that it lifted my spirits and brightened 
+ my day, you can't go wrong with this movie."""
+
+review6 = """I don't understand why it received an aclamation
+ for best movie, it was long and boring"""
+
+review9 = """I had expected so much more from this movie, I was very disappointed in the tedious 
+ story"""
+
+review10 = "I wish I could vist this place for the rest of my life"
