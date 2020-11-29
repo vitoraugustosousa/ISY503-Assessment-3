@@ -1,7 +1,7 @@
+
+
 from tensorflow import keras
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-
-
 
 import pickle
 
@@ -9,10 +9,7 @@ from spellchecker import SpellChecker
 
 
 import os
-import pandas as pd 
-import numpy as np 
 import flask
-import pickle
 
 from flask import Flask, render_template, request
 app=Flask(__name__,template_folder='templates')
