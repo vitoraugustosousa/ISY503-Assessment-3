@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #f1f1f1;
+    }
+
+    #regForm {
+        background-color: #ffffff;
+        margin: 20px auto;
+        font-family: Raleway;
+        padding: 40px;
+        width: 70%;
+        min-width: 300px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    input,
+    select {
+        padding: 10px;
+        width: 100%;
+        font-size: 17px;
+        font-family: Raleway;
+        border: 1px solid #aaaaaa;
+    }
+
+    #footer {
+        text-align: left !important;
+    }
+    #students{
+        text-align: left;
+        width: 100%;
+    }
+
+</style>
+
+<body>
+    <form id="regForm" action=".">
+
+        <h1>ISY503-Assessment-3</h1>
+
+        <div class="tab">
+            <h3>Sentence:</h3>
+            <p>{{ sentence }}</p>
+
+        </div>
+
+        <div id="emotion">
+            <h3>Prediction : </h3>
+            {{ prediction }}
+        </div>
+        <div style="overflow:auto; padding-top: 20px">
+            <div style="float:right;">
+                <button type="submit" id="submit">Restart</button>
+            </div>
+        </div>
+        <div>
+            <img id="rating1" src="static/feedback-rating-1.jpg">
+            <img id="rating2" src="static/feedback-rating-2.jpg">
+            <img id="rating3" src="static/feedback-rating-3.jpg">
+            <img id="rating4" src="static/feedback-rating-4.jpg">
+            <img id="rating5" src="static/feedback-rating-5.jpg">
+        </div>
+        <div>
+        </div>
+    </form>
+    <div id="footer">
+        <h4>Students:</h4>
+        <div id="students">
+        
+        <ul>
+            <li>00277850T - Vitor Sousa</li>
+            <li>00298228T - Ajay Konda</li>
+            <li>00280485T - Hernan Izquierdo</li>
+        </ul>
+            </div>
+    </div>
+    <script>
+        var pr = {{ prediction }}
+        var opacity = "opacity: 0.1;"
+        var active = "opacity: 1;"
+        document.getElementById("rating1").style = opacity;
+        document.getElementById("rating2").style = opacity;
+        document.getElementById("rating3").style = opacity;
+        document.getElementById("rating4").style = opacity;
+        document.getElementById("rating5").style = opacity;
+        
+        if (pr < 0.2){
+            document.getElementById("rating1").style = active;
+        }else if (pr >= 0.2 && pr < 0.4){
+            document.getElementById("rating2").style = active;
+        }else if (pr >= 0.4 && pr < 0.6){
+            document.getElementById("rating3").style = active;
+        }else if (pr >= 0.6 && pr < 0.8){
+            document.getElementById("rating4").style = active;
+        }else if (pr >= 0.8){
+            document.getElementById("rating5").style = active;
+        } 
+    </script>
+</body>
+
+</html>

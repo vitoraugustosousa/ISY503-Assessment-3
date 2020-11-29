@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #f1f1f1;
+    }
+
+    #regForm {
+        background-color: #ffffff;
+        margin: 20px auto;
+        font-family: Raleway;
+        padding: 40px;
+        width: 70%;
+        min-width: 300px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    input,
+    select {
+        padding: 10px;
+        width: 100%;
+        font-size: 17px;
+        font-family: Raleway;
+        border: 1px solid #aaaaaa;
+    }
+
+    #footer {
+        text-align: left !important;
+    }
+    #students{
+        text-align: left;
+        width: 100%;
+    }
+
+</style>
+
+<body>
+    <form id="regForm" action="/predict" method="POST">
+
+        <h1>ISYS503</h1>
+
+        <div class="tab">Sentence:
+            <p><input type="text" id="sentence" name="sentence" required maxlength="100" spellcheck="false" placeholder="Enter your sentence here"></p>
+            <!--p><input type="text" id="prediction" name="prediction" required maxlength="100" spellcheck="false" placeholder="Enter your prediction here"></p-->
+
+        </div>
+
+        <div style="overflow:auto; padding-top: 20px">
+            <div style="float:right;">
+                <button type="submit" id="submit">Submit</button>
+            </div>
+        </div>
+
+    </form>
+    <div id="footer">
+        <h4>Students:</h4>
+        <div id="students">
+        
+        <ul>
+            <li>00277850T - Vitor Sousa</li>
+            <li>00298228T - Ajay Konda</li>
+            <li>00280485T - Hernan Izquierdo</li>
+        </ul>
+            </div>
+    </div>
+    <script>
+    </script>
+</body>
+
+</html>
